@@ -1,0 +1,95 @@
+<% layout('layout') %>
+  <div class="page-content-wrapper">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="row">
+          <h4 class="main-title">Add a customer</h4>
+          <div class="col-md-offset-4 col-md-8">
+            <form method="POST">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <div class="form-group ">
+                    <label for="">First Name</label>
+                    <input id="firstname" class="form-control" name="firstname" type="text">
+                    <span id="errorMsg1"></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                    <label for="">Last Name</label>
+                    <input id="lastname" class="form-control" name="lastname" type="text">
+                    <span id="errorMsg2"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <label for="">Email</label>
+                  <input id="email" class="form-control" name="email" type="text">
+                  <span id="errorMsg3"></span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <label for="">ID number</label>
+                  <input id="idNumber" class="form-control" name="idNumber" type="text">
+                  <span id="errorMsg4"></span>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-12">
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <label for="">Phone</label>
+                  <input id="phone" class="form-control" name="phone" type="text">
+                  <span id="errorMsg5"></span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <label for="">Address</label>
+                  <input id="address" class="form-control" name="address" type="text">
+                  <span id="errorMsg6"></span>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="submit" id="create" value="create" class="form-control btn btn-primary button-submit" name="create">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="main-title">List Customers</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let i = 0; i < customers.length; i++) { %>
+                <tr>
+                  <td><a href="/detail/<%=customers[i]._id %>"><%= customers[i].firstname + " " + customers[i].lastname %></a></td>
+                  <td><a href="/detail/<%=customers[i]._id %>"><%= customers[i].email %></a></td>
+                  <td><a href="/detail/<%=customers[i]._id %>"><%= customers[i].phone %></a></td>
+                  <td><a href="/detail/<%=customers[i]._id %>"><%= customers[i].date %></a></td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
