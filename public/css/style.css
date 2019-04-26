@@ -1,0 +1,30 @@
+body {
+    background: #efefef;
+ }
+
+.page-content-wrapper {
+    margin-top: 30px;
+}
+
+.add-customer {
+    max-width: 160px;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.page-content-wrapper .alert-danger {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.page-content-wrapper .alert {
+    padding: 0;
+    margin: 0;
+}
+
+.main-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
